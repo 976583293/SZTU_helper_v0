@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "SZTU_helper_v0"
