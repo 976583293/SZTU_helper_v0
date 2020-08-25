@@ -3,6 +3,7 @@
     package="com.example.sztu_helper_v0">
 
     <application
+        android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
