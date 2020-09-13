@@ -1,50 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="270dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#E6FFFFFF"
+        android:elevation="0dp"
+        app:itemTextColor="@color/color_main"
+        app:itemIconTint="@color/color_main"
+        app:menu="@menu/menu_nav"
+        app:headerLayout="@layout/layout_nav_header">
+    </com.google.android.material.navigation.NavigationView>
 
-    <ImageSwitcher
-        android:id="@+id/image_post"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </ImageSwitcher>
     <LinearLayout
-        android:id="@+id/ll_left"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="@id/ll_right"
-        app:layout_constraintEnd_toStartOf="@id/ll_right"
-        app:layout_constraintTop_toBottomOf="@id/image_post">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            android:background="#FFFFFF"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp">
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="-55dp"
+            android:background="@drawable/draw_shadow">
+        </View>
+
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_right"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toTopOf="@id/ll_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_post">
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:id="@+id/bottom_nav"
+        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/bottom_course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:text="@string/bottom_course"
+                    android:textSize="14sp"
+                    android:drawablePadding="3dp"
+                    android:textColor="@color/color_unchecked"
+                    android:drawableTop="@drawable/selector_bottomnav_course"
+                    android:layout_marginBottom="-5dp">
+                </TextView>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/bottom_mainpage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:text="@string/bottom_mainpage"
+                    android:textSize="14sp"
+                    android:drawablePadding="3dp"
+                    android:layout_marginBottom="-5dp"
+                    android:textColor="@color/color_unchecked"
+                    android:drawableTop="@drawable/selector_bottomnav_mainpage">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:id="@+id/bottom_school"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/selector_bottomnav_school"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:textSize="14sp"
+                    android:drawablePadding="3dp"
+                    android:layout_marginBottom="-5dp"
+                    android:text="@string/bottom_school"
+                    android:textColor="@color/color_unchecked">
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

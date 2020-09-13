@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_course"
+        android:icon="@drawable/selector_bottomnav_course"
+        android:title="@string/bottom_course"/>
+
+    <item
+        android:id="@+id/navigation_mainpage"
+        android:icon="@drawable/selector_bottomnav_mainpage"
+        android:title="@string/bottom_mainpage"/>
+
+    <item
+        android:id="@+id/navigation_school"
+        android:icon="@drawable/selector_bottomnav_school"
+        android:title="@string/bottom_school" />
+</menu>

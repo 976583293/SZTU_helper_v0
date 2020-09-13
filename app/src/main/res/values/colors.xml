@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#3700B3</color>
+    <color name="colorPrimaryDark">#29317C</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="color_main">#13227A</color>
     <color name="color_unchecked">#4D5594</color>
@@ -10,4 +10,9 @@
     <color name="color_item_bg">#E5E7F0</color>
     <color name="color_hint">#7F86B2</color>
     <color name="color_highlight">#FA5151</color>
+
+    <color name="color_item_divider">#EFEFEF</color>
+    <color name="color_dot_checked">#29317C</color>
+    <color name="color_dot_unchecked">#66000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SZTU_helper_v0</string>
+    <string name="bottom_course">课程学习</string>
+    <string name="bottom_mainpage">学生主页</string>
+    <string name="bottom_school">校园生活</string>
+    <string name="frag_course_title">我的课程</string>
+    <string name="frag_mainpage_title">主页</string>
+    <string name="frag_school_title"> </string>
 </resources>
