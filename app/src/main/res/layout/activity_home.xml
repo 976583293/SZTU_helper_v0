@@ -10,7 +10,7 @@
         android:id="@+id/nav"
         android:layout_width="270dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
+        android:layout_gravity="start"
         android:background="#E6FFFFFF"
         android:elevation="0dp"
         app:itemTextColor="@color/color_main"
@@ -54,6 +54,7 @@
         android:id="@+id/bottom_nav"
         android:orientation="horizontal">
             <LinearLayout
+                android:id="@+id/ll_course"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -67,13 +68,14 @@
                     android:text="@string/bottom_course"
                     android:textSize="14sp"
                     android:drawablePadding="3dp"
-                    android:textColor="@color/color_unchecked"
+                    android:textColor="@drawable/selector_bottom_txt_color"
                     android:drawableTop="@drawable/selector_bottomnav_course"
                     android:layout_marginBottom="-5dp">
                 </TextView>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_mainpage"
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -88,12 +90,13 @@
                     android:textSize="14sp"
                     android:drawablePadding="3dp"
                     android:layout_marginBottom="-5dp"
-                    android:textColor="@color/color_unchecked"
+                    android:textColor="@drawable/selector_bottom_txt_color"
                     android:drawableTop="@drawable/selector_bottomnav_mainpage">
                 </TextView>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_school"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -109,7 +112,7 @@
                     android:drawablePadding="3dp"
                     android:layout_marginBottom="-5dp"
                     android:text="@string/bottom_school"
-                    android:textColor="@color/color_unchecked">
+                    android:textColor="@drawable/selector_bottom_txt_color">
                 </TextView>
             </LinearLayout>
         </LinearLayout>

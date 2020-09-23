@@ -15,4 +15,5 @@
     <color name="color_dot_checked">#29317C</color>
     <color name="color_dot_unchecked">#66000000</color>
     <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>
