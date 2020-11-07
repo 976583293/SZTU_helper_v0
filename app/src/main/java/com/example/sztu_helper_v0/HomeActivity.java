@@ -45,8 +45,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         fragmentManager = getSupportFragmentManager();
         Log.d(TAG, "onCreate: create home view successfully!");
         initViews();
-        initToolbar();
-        initDrawerLayout();
+        initToolbar();//初始化导航栏
+        initDrawerLayout();//初始化侧滑栏
     }
 
     private void initDrawerLayout() {

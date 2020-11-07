@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         User user = new User();
         UserManager userManager = new UserManager();
         String account = et_account.getText().toString();
+
         //判断有无记住密码
         if(cb_password.isChecked()){
             String psw = userManager.getPswByAccount(account);

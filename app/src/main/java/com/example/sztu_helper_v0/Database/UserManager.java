@@ -7,6 +7,13 @@ import org.litepal.LitePal;
 import java.util.List;
 
 public class UserManager {
+    //添加用户
+    public User createAccount(String account, String psw){
+        User user = new User();
+        user.setAccount(account);
+        user.setPassword(psw);
+        return user;
+    }
     //通过账号查找该用户在不在
     public boolean findUserByAccount(String account){
         List<User> users = LitePal.findAll(User.class);
