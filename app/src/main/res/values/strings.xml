@@ -6,4 +6,11 @@
     <string name="frag_course_title">我的课程</string>
     <string name="frag_mainpage_title">主页</string>
     <string name="frag_school_title"> </string>
+    <string name="course_submit_hw">提交作业</string>
+    <string name="course_courseware">查看课件</string>
+    <string name="course_check_inform">查看通知</string>
+    <string name="course_FAQ">课程问答</string>
+    <string name="school_nearby">学校周边</string>
+    <string name="school_club">学生社团</string>
+    <string name="school_official">校园官网</string>
 </resources>
