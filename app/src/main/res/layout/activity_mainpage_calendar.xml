@@ -4,13 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Mainpage_calendar">
-
+    tools:context=".Mainpage_calendar"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+        <TextView
+            android:id="@+id/week"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="第一周"
+            android:textSize="20sp"
+            android:textColor="@color/color_checked">
+        </TextView>
+        <ImageButton
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/sorrow_left"
+            android:background="@color/white">
+        </ImageButton>
+        <TextView
+            android:id="@+id/yearnm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="2020 年 4 月"
+            android:textSize="20sp"
+            android:textColor="@color/color_checked">
+        </TextView>
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            android:src="@drawable/sorrow_right">
+        </ImageButton>
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="星期四"
+            android:textSize="20sp"
+            android:textColor="@color/color_checked">
+        </TextView>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/draw_shadow">
+    </View>
     <com.haibin.calendarview.CalendarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_margin="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:elevation="5dp"
         app:month_view_show_mode="mode_only_current"
         app:current_month_text_color="@color/color_checked"
