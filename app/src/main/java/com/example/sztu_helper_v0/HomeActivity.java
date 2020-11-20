@@ -69,15 +69,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     //初始化view
     private void initViews() {
-        dl_left = (DrawerLayout)findViewById(R.id.dl_main);
-        fl_main = (FrameLayout)findViewById(R.id.fl_main);
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
-        bottom_course = (TextView)findViewById(R.id.bottom_course);
-        bottom_mainpage = (TextView)findViewById(R.id.bottom_mainpage);
-        bottom_school = (TextView)findViewById(R.id.bottom_school);
-        ll_course = (LinearLayout)findViewById(R.id.ll_course);
-        ll_mainpage = (LinearLayout)findViewById(R.id.ll_mainpage);
-        ll_school = (LinearLayout)findViewById(R.id.ll_school);
+        dl_left = (DrawerLayout) findViewById(R.id.dl_main);
+        fl_main = (FrameLayout) findViewById(R.id.fl_main);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        bottom_course = (TextView) findViewById(R.id.bottom_course);
+        bottom_mainpage = (TextView) findViewById(R.id.bottom_mainpage);
+        bottom_school = (TextView) findViewById(R.id.bottom_school);
+        ll_course = (LinearLayout) findViewById(R.id.ll_course);
+        ll_mainpage = (LinearLayout) findViewById(R.id.ll_mainpage);
+        ll_school = (LinearLayout) findViewById(R.id.ll_school);
 
         bottom_course.setOnClickListener(this);
         bottom_mainpage.setOnClickListener(this);
@@ -87,17 +87,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         ll_course.setBackgroundResource(R.drawable.draw_bottom_bg_left);
         ll_school.setBackgroundResource(R.drawable.draw_bottom_bg_right);
         fragmentTransaction = fragmentManager.beginTransaction();
-        if(fragmentMainpage == null){
+        if (fragmentMainpage == null) {
             fragmentMainpage = new Fragment_mainpage();
         }
-        fragmentTransaction.add(R.id.fl_main,fragmentMainpage).commit();
+        fragmentTransaction.add(R.id.fl_main, fragmentMainpage).commit();
     }
+
     //定义导航栏的点击事件
     @Override
     public void onClick(View view) {
         fragmentTransaction = fragmentManager.beginTransaction();
         hideAllFragment(fragmentTransaction);
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.bottom_course:
                 Log.d(TAG, "onClick: you click course.");
                 clearSelected();
@@ -105,11 +106,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 ll_course.setBackgroundResource(R.drawable.draw_bottom_bg);
                 ll_mainpage.setBackgroundResource(R.drawable.draw_bottom_bg_right);
                 ll_school.setBackgroundResource(R.color.white);
-                if(fragmentCourse == null){
+                if (fragmentCourse == null) {
                     fragmentCourse = new Fragment_course();
-                    fragmentTransaction.add(R.id.fl_main,fragmentCourse).commit();
-                }
-                else{
+                    fragmentTransaction.add(R.id.fl_main, fragmentCourse).commit();
+                } else {
                     showFragment(fragmentCourse);
                 }
                 break;
@@ -120,11 +120,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 ll_mainpage.setBackgroundResource(R.drawable.draw_bottom_bg);
                 ll_course.setBackgroundResource(R.drawable.draw_bottom_bg_left);
                 ll_school.setBackgroundResource(R.drawable.draw_bottom_bg_right);
-                if(fragmentMainpage == null){
+                if (fragmentMainpage == null) {
                     fragmentMainpage = new Fragment_mainpage();
-                    fragmentTransaction.add(R.id.fl_main,fragmentMainpage).commit();
-                }
-                else{
+                    fragmentTransaction.add(R.id.fl_main, fragmentMainpage).commit();
+                } else {
                     showFragment(fragmentMainpage);
                 }
                 break;
@@ -135,16 +134,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 ll_course.setBackgroundResource(R.color.white);
                 ll_mainpage.setBackgroundResource(R.drawable.draw_bottom_bg_left);
                 ll_school.setBackgroundResource(R.drawable.draw_bottom_bg);
-                if(fragmentSchool == null){
+                if (fragmentSchool == null) {
                     fragmentSchool = new Fragment_school();
-                    fragmentTransaction.add(R.id.fl_main,fragmentSchool).commit();
-                }
-                else{
+                    fragmentTransaction.add(R.id.fl_main, fragmentSchool).commit();
+                } else {
                     showFragment(fragmentSchool);
                 }
                 break;
         }
     }
+
     //取消所有导航按钮的选中状态
     private void clearSelected() {
         bottom_course.setSelected(false);
@@ -153,33 +152,41 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //显示某个fragment
-    private void showFragment(Fragment fragment){
+    private void showFragment(Fragment fragment) {
         fragmentTransaction = fragmentManager.beginTransaction();
         hideAllFragment(fragmentTransaction);
         fragmentTransaction.show(fragment);
         fragmentTransaction.commit();
     }
+
     //隐藏所有fragment
     private void hideAllFragment(FragmentTransaction fragmentTransaction) {
-        if(fragmentCourse != null){
+        if (fragmentCourse != null) {
             fragmentTransaction.hide(fragmentCourse);
         }
-        if(fragmentMainpage != null){
+        if (fragmentMainpage != null) {
             fragmentTransaction.hide(fragmentMainpage);
         }
-        if(fragmentSchool != null){
+        if (fragmentSchool != null) {
             fragmentTransaction.hide(fragmentSchool);
         }
     }
 
     //点击返回键
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         if (dl_left.isDrawerOpen(GravityCompat.START)) {
             dl_left.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    //定义主页的Fragment的Click方法
+    public void functionsViewClick(View v){
+        switch (v.getId()){
+            case R.id.fun_lessonTable:
+
         }
     }
 

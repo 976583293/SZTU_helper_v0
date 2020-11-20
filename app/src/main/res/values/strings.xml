@@ -13,4 +13,6 @@
     <string name="school_nearby">学校周边</string>
     <string name="school_club">学生社团</string>
     <string name="school_official">校园官网</string>
+
+    <string name="upload_explain">请上传文件</string>
 </resources>

@@ -21,16 +21,15 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:text="第一周"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="@color/color_checked">
         </TextView>
         <ImageButton
             android:id="@+id/prev"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             android:src="@drawable/sorrow_left"
             android:background="@color/white">
         </ImageButton>
@@ -49,7 +48,7 @@
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="24dp"
             android:background="@color/white"
             android:src="@drawable/sorrow_right">
         </ImageButton>
@@ -58,10 +57,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="星期四"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="@color/color_checked">
         </TextView>
     </LinearLayout>
