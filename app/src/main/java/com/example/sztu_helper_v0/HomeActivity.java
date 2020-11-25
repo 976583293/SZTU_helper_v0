@@ -183,8 +183,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //定义主页的Fragment的Click方法
-    public void functionsViewClick(View v){
-        switch (v.getId()){
+    public void functionsViewClick(View v) {
+        switch (v.getId()) {
             case R.id.fun_lessonTable:
 
         }
