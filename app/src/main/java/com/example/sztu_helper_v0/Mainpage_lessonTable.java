@@ -2,18 +2,27 @@ package com.example.sztu_helper_v0;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.leon.lfilepickerlibrary.LFilePicker;
+import com.leon.lfilepickerlibrary.filter.LFileFilter;
+
 public class Mainpage_lessonTable extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "Mainpage_lessonTable";
     int REQUEST_CODE = 120;
+    int RESULT_OK = 9;
     private TextView upload;
+
+    String filename;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,41 +36,28 @@ public class Mainpage_lessonTable extends AppCompatActivity implements View.OnCl
         pickFile(upload);//选择文件并上传
     }
 
-    //打开系统文件管理器
-    private void pickFile(View v) {
-        String[] mimeTypes =
-                {"application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .doc & .docx
-                        "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", // .xls & .xlsx
-                };
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        String mimeTypesStr = "";
-        for (String mimeType : mimeTypes) {
-            mimeTypesStr += mimeType + "|";
-        }
-        intent.setType(mimeTypesStr.substring(0, mimeTypesStr.length() - 1));
-        startActivityForResult(intent, REQUEST_CODE);
+    //选择文件
+    private void pickFile(TextView upload) {
+        new LFilePicker()
+                .withActivity(Mainpage_lessonTable.this)
+                .withRequestCode(REQUEST_CODE)
+                .withBackgroundColor("#3700B3")
+                .withStartPath("/storage/emulated")
+                .start();
     }
 
+    //处理结果
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (data == null) {//如果用户没有选择文件，返回
-            return;
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_CODE) {
+                filename = data.getDataString();
+                Log.d(TAG, "onActivityResult: you choose" + filename);
+            }
         }
-        Uri uri = data.getData();//获取用户的文件uri
-        // 通过ContentProvider查询文件路径
-        ContentResolver resolver = this.getContentResolver();
-        Cursor cursor = resolver.query(uri, null, null, null, null);
-        if (cursor == null) {
-            // 未查询到，说明为普通文件，可直接通过URI获取文件路径
-            String path = uri.getPath();
-            return;
-        }
-        if (cursor.moveToFirst()) {
-            // 多媒体文件，从数据库中获取文件的真实路径
-            String path = cursor.getString(cursor.getColumnIndex("_data"));
-        }
-        cursor.close();
     }
+
+    //读取文件
+
 }

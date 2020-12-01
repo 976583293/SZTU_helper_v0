@@ -43,10 +43,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.youth.banner:banner:2.1.0'
     implementation 'com.haibin:calendarview:3.6.8'
-    implementation 'org.apache.poi:poi:3.17'
-    implementation 'org.apache.poi:poi-ooxml:3.17'
-    implementation 'org.apache.xmlbeans:xmlbeans:3.1.0'
-    implementation 'stax:stax:1.2.0'
+    implementation 'com.leon:lfilepickerlibrary:1.8.0'
+    implementation 'cn.leancloud:realtime-android:6.5.14'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 }
 repositories {
     mavenCentral()
