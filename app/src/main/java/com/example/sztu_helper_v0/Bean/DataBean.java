@@ -1,4 +1,4 @@
-package com.example.sztu_helper_v0.bean;
+package com.example.sztu_helper_v0.Bean;
 
 import com.example.sztu_helper_v0.R;
 

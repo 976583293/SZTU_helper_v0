@@ -1,8 +1,8 @@
-package com.example.sztu_helper_v0.Database;
+package com.example.sztu_helper_v0.Bean;
 
 import org.litepal.crud.LitePalSupport;
 
-public class User extends LitePalSupport {
+public class UserBean extends LitePalSupport {
     private int id;
 
     private String account;

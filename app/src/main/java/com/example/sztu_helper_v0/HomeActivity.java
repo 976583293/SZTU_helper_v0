@@ -181,13 +181,4 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             super.onBackPressed();
         }
     }
-
-    //定义主页的Fragment的Click方法
-    public void functionsViewClick(View v) {
-        switch (v.getId()) {
-            case R.id.fun_lessonTable:
-
-        }
-    }
-
 }

@@ -3,7 +3,6 @@ package com.example.sztu_helper_v0;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,15 +12,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.sztu_helper_v0.Database.User;
+import com.example.sztu_helper_v0.Bean.UserBean;
 import com.example.sztu_helper_v0.Database.UserManager;
 import com.example.sztu_helper_v0.Utils.MD5Util;
 
 import org.litepal.LitePal;
-import org.litepal.crud.LitePalSupport;
 import org.litepal.tablemanager.Connector;
-
-import java.sql.SQLData;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -57,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     //登录操作
     @SuppressLint("ShowToast")
     private boolean login(){
-        User user = new User();
+        UserBean user = new UserBean();
         UserManager userManager = new UserManager();
         String account = et_account.getText().toString();
 
